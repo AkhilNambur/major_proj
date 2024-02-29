@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ObjectDetection-YOLOv8</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header.feature-box.center {
+            background-color: lightseagreen;
+            color: white;
+            height: 120px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        header.feature-box.below {
+            height: 800px;
+            background-color: blue;
+            margin-top: -30px;
+            background-image: url("../static/images/1.png");
+            background-size: 100%;
+            background-position: center;
+            position: relative;
+        }
+
+
+
+
+        .text-box {
+            position: absolute;
+            bottom: 750px;
+            /* Adjusted top value */
+            width: 340px;
+            text-align: center;
+            color: white;
+        }
+
+        .text-box:nth-child(1) {
+            left: 260px;
+        }
+
+        .text-box:nth-child(2) {
+            left: 700px;
+        }
+
+        .text-box:nth-child(3) {
+            left: 1050px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: right;
+        }
+
+        li {
+            display: inline-block;
+            background-color: rgb(128, 128, 128);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        li:hover {
+            background-color: red;
+            margin: 10px;
+        }
+        a
+        { margin-left: 700px;
+
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .feature-box.right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .centered-heading {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px; /* Adjust the padding as needed */
+        }
+
+        .feature-box.right {
+            /* Add any specific styles you need for the header */
+        }
+
+        .centered-heading {
+            text-align: center;
+        }
+
+        /* Placeholder rectangles for buttons */
+        .button1,
+        .button2,
+        .button3 {
+            position: absolute;
+            top: 160px; /* Adjusted top value */
+            width: 340px;
+            height: 300px;
+        }
+
+        .button1 {
+            left: 170px;
+        }
+
+        .button2 {
+            left: 600px;
+        }
+
+        .button3 {
+            left: 1050px;
+        }
+
+        /* Change cursor on hover */
+        .button1:hover,
+        .button2:hover,
+        .button3:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the wallpaper element
+            var wallpaper = document.querySelector('.feature-box.below');
+
+            // Add a click event listener to the wallpaper
+            wallpaper.addEventListener('click', function (event) {
+                // Get the X and Y coordinates of the click event
+                var x = event.clientX;
+                var y = event.clientY;
+
+                // Check the coordinates and navigate accordingly
+                if (isPointInsideArea(x, y, 170, 510, 80, 500)) {
+                    window.location.href = '/FrontPage'; // Navigate to Army Vehicle Detection
+                } else if (isPointInsideArea(x, y, 600, 940, 80, 500)) {
+                    window.location.href = '/NavyPage'; // Navigate to Navy Vehicle Detection
+                } else if (isPointInsideArea(x, y, 1050, 1390, 80, 500)) {
+                    window.location.href = '/AirForcePage'; // Navigate to Airforce Vehicle Detection
+                }
+            });
+
+            // Function to check if a point is inside a specified rectangular area
+            function isPointInsideArea(x, y, xStart, xEnd, yStart, yEnd) {
+                return x >= xStart && x <= xEnd && y >= yStart && y <= yEnd;
+            }
+        });
+    </script>
+</head>
+
+
+
+<body>
+
+    <header class="feature-box center">
+        <h1><strong>Three Indian Armed Forces Vehicle Detection</strong></h1><br>
+        <a href="/Help" style="position: absolute; top: 20px; left: 20px;">About us</a>
+    </header>
+
+    <header class="feature-box below">
+        <!-- Text boxes without buttons -->
+        <div class="text-box" style="left: 170px; top: 10px; font-size: 20px">
+            <div style="color: black;"><b>Army <br>Vehicle<br> Detection</b></div>
+        </div>
+        <div class="text-box" style="left: 610px; top : 10px;font-size: 20px">
+            <div style="color: white;"><b>Navy <br> Vehicle<br>  Detection</b></div>
+        </div>
+        <div class="text-box" style="left: 1060px; top: 10px; font-size: 20px">
+            <div style="color: black;"><b>Airforce<br> Vehicle<br> Detection</b></div>
+        </div>
+
+        <!-- Additional text below navigation logic -->
+        <div style="position: absolute; top: 160px; left: 310px; black: white; font-size: 23px;">
+            <b>Click</b>
+        </div>
+                <div style="position: absolute; top: 160px; left: 755px; color: black; font-size: 23px;">
+            <b>Click </b>
+        </div>
+
+                <div style="position: absolute; top: 160px; left: 1197px; color: black; font-size: 23px;">
+                    <b>Click</b>
+        </div>
+
+
+        <!-- New text box -->
+        <div class="text-box" style="left: 500px; bottom: 500px;">
+            <div style="color: white;"></div>
+        </div>
+
+        <div class="button1"></div>
+        <div class="button2"></div>
+        <div class="button3"></div>
+
+        <!-- Navigation (if needed) -->
+        <nav>
+            <!-- your navigation content -->
+        </nav>
+
+    </header>
+
+</body>
+
+
+
+</html>

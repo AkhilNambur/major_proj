@@ -1,0 +1,12 @@
+train: /content/drive/MyDrive/yolov7_tracking/yolov7_detection/boats_detection_dataset/train/images
+val: /content/drive/MyDrive/yolov7_tracking/yolov7_detection/boats_detection_dataset/valid/images
+
+
+nc: 7
+names: ['Army-Ground-Armouredcombatvehicle-Arjun',
+'Army-Ground-Armouredpersonnelcarrier-Casspir',
+'Army-Aerial-Helicopters-Boeing-AH-64-Apache',
+'Army-Aerial-Helicopters-HALRudra',
+'Army-Aerial-Helicopters-HALCheetah',
+'Army-Aerial-Drones-IAISearcher',
+'Army-Aerial-Drones-IAIHeronTP']
